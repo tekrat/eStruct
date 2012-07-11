@@ -1,0 +1,7 @@
+/* 
+** eStruct **
+JavaScript function to handle hash tables
+Copyright (c) 2012 Ervin Kosch, released under the GPL 3 license
+https://github.com/tekrat/eDrop
+*/
+function eStruct(){this.structure={};this.Add=function(a,b){this.structure[a]=b};this.IsEmpty=function(){return this.Len()==0};this.KeyExists=function(a){return this.structure.hasOwnProperty(a)};this.KeyList=function(){var a=new Array;for(var b in this.structure){a.push(b)}return a};this.KeyListSort=function(a){var b=this.KeyList();if(a==0){return b.sort().reverse()}else{return b.sort()}};this.ValueList=function(){var a=new Array;for(var b in this.structure){a.push(this.structure[b])}return a};this.ValueListSort=function(a){var b=this.ValueList();if(a==0){return b.sort().reverse()}else{return b.sort()}};this.Len=function(){var a=0;for(var b in this.structure){a++}return a};this.Get=function(a){if(this.KeyExists(a)){return this.structure[a]}else{return null}};this.Delete=function(a){if(this.KeyExists(a)){delete this.structure[a]}else{return undefined}};this.Clear=function(){for(var a in this.structure){this.Delete(a)}};this.GetStruct=function(){return this.structure};this.Serialize=function(){var a="<struct>\r\n";for(var b in this.structure){a+="	<"+b+">"+encodeURIComponent(this.structure[b])+"</"+b+">\r\n"}a+="</struct>";return a}}
