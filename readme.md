@@ -3,6 +3,8 @@ eStruct
 
 JavaScript class to handle all common hash table/structure functions
 
+**Please Note:** 12/5/2017 - This was written when JSON was included in browsers by default and named arrays were in thier infancy.  The plan is to give this a once over and then end of life this project.
+
 Example
 ====
 <pre>
